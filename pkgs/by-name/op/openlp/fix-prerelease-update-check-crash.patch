@@ -1,0 +1,11 @@
+--- a/openlp/core/version.py	2026-08-20 14:45:29.000000000 -0400
++++ b/openlp/core/version.py	2026-10-02 22:24:31.290501169 -0400
+@@ -91,7 +91,7 @@
+         download_url = VERSION_BASE_URL
+         if self.current_version['build']:
+             download_url += VERSION_NIGHTLY
+-        elif int(self.current_version['version'].split('.')[1]) % 2 != 0:
++        elif parse(self.current_version['version']).minor % 2 != 0:
+             download_url += VERSION_DEVELOP
+         else:
+             download_url += VERSION_STABLE
